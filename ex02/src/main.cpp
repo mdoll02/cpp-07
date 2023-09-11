@@ -1,5 +1,7 @@
 #include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
+#include "Array.tpp"
+#include <Colors.hpp>
 
 #define MAX_VAL 750
 int main(int, char**)
@@ -21,9 +23,11 @@ int main(int, char**)
 
     for (int i = 0; i < MAX_VAL; i++)
     {
+		if (i % 10 == 0)
+			std::cout << GREEN << "original: " << numbers[i] << " \tcopy: " << mirror[i] << R << std::endl;
         if (mirror[i] != numbers[i])
         {
-            std::cerr << "didn't save the same value!!" << std::endl;
+            std::cerr << RED << "didn't save the same value!!" << R << std::endl;
             return 1;
         }
     }
