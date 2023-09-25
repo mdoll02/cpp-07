@@ -2,16 +2,18 @@
 #include "Array.hpp"
 #include "Array.tpp"
 #include <Colors.hpp>
+#include <cstdlib>
 
 #define MAX_VAL 750
+
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
-    srand(time(NULL));
+    std::srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)
     {
-        const int value = rand();
+        const int value = std::rand();
         numbers[i] = value;
         mirror[i] = value;
     }
@@ -50,7 +52,7 @@ int main(int, char**)
 
     for (int i = 0; i < MAX_VAL; i++)
     {
-        numbers[i] = rand();
+        numbers[i] = std::rand();
     }
     delete [] mirror;//
     return 0;
