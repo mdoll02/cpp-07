@@ -19,5 +19,16 @@ int main() {
 	std::cout << GREEN << "c = " << c << ", d = " << d << R << std::endl;
 	std::cout << YELLOW << "min( c, d ) = " << ::min( c, d ) << R << std::endl;
 	std::cout << YELLOW << "max( c, d ) = " << ::max( c, d ) << R << std::endl;
+	bool no = true;
+	bool yes = true;
+	std::cout << GREEN << "no = " << no << ", yes = " << yes << std::endl;
+	std::cout << MAGENTA << "swapping ..." << R << std::endl;
+	::swap(yes, no);
+	std::cout << YELLOW << "min( yes, no ) = " << ::min( yes, no ) << R << std::endl;
+	std::cout << YELLOW << "max( yes, no ) = " << ::max( yes, no ) << R << std::endl;
+	//std::cout << RED << "Error test: " << std::endl;
+	//int i = 3;
+	//std::string str = "Hello";
+	//::swap(i, str);
 	return 0;
 }
