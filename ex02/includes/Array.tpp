@@ -5,18 +5,20 @@
 
 template<typename T>
 Array<T>::Array() : _arr(NULL), _size(0){
-	std::cout << "Array() called" << std::endl;
+	//std::cout << "Array() called" << std::endl;
 }
 
 template<typename T>
 Array<T>::Array(unsigned int n): _arr(new T[n]), _size(n) {
-	std::cout << "Array(unsigned int n) called" << std::endl;
-
+	//std::cout << "Array(unsigned int n) called" << std::endl;
+	for (unsigned int i = 0; i < _size; ++i) {
+		_arr[i] = T();
+	}
 }
 
 template<typename T>
 Array<T>::Array(const Array &src) : _size(src._size) {
-	std::cout << "Array copy constructor called" << std::endl;
+	//std::cout << "Array copy constructor called" << std::endl;
 	_arr = new T[_size];
 	for (unsigned int i = 0; i < _size; i++) {
 		_arr[i] = src._arr[i];
@@ -25,8 +27,8 @@ Array<T>::Array(const Array &src) : _size(src._size) {
 
 template<typename T>
 Array<T> &Array<T>::operator=(const Array &rhs) {
-	std::cout << "Array operator= called" << std::endl;
-	if (this != &rhs)
+	//std::cout << "Array operator= called" << std::endl;
+	if (this == &rhs)
 		return *this;
 	this->_size = rhs.size;
 	delete[] this->_arr;
